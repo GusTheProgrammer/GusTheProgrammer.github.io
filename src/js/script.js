@@ -75,6 +75,11 @@ function applySavedTheme() {
   setTheme(savedTheme);
 }
 
+function openWebsiteInNewTab(url) {
+  window.open(url, '_blank').focus();
+}
+
+
 document.getElementById('theme-toggle').addEventListener('change', function() {
   var newTheme = this.checked ? 'light' : 'dark';
   setTheme(newTheme);

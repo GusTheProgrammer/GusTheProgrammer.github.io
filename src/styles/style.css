@@ -556,12 +556,12 @@ a {
   line-height: 1.4;
 }
 
-.resume-box ul {
+.resume-box > ul > li {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.resume-box li {
+.resume-box > ul > li {
   background-color: var(--px-bg);
   border: 2px solid var(--px-border);
   padding: 15px 15px 20px 70px;
@@ -569,7 +569,7 @@ a {
   position: relative;
   transition: ease all 0.35s;
 }
-.resume-box .resume-link {
+.resume-box > ul > li .resume-link {
   position: absolute;
   top: 10px;
   right: 10px;
