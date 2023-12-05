@@ -16,15 +16,15 @@
   <!-- End Header Top -->
   <div class="header-top-fixed one-page-nav">
     <div class="container">
-      <!-- Brand -->
       <div class="logo">
-        <a class="navbar-brand" href="#">
-          <img class="logo-dark" title="" alt="" src="assets/img/logo.svg">
-          <img class="logo-light" title="" alt="" src="assets/img/logo-light.svg">
-        </a>
+        <label class="toggle-switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="switch"></span>
+        </label>
+        
+
       </div>
 
-      <!-- / -->
       <ul class="main-menu">
         <li>
           <a data-scroll-nav="0" href="#home">
@@ -35,91 +35,49 @@
           </a>
         </li>
         <li>
-          <a data-scroll-nav="1" href="#services">
+          <a data-scroll-nav="1" href="#about">
             <span class="m-icon">
               <i class="bi-person"></i>
             </span>
             <span class="m-text">About</span>
           </a>
         </li>
+
         <li>
-          <a data-scroll-nav="2" href="#services">
-            <span class="m-icon">
-              <i class="bi-briefcase"></i>
-            </span>
-            <span class="m-text">Services</span>
-          </a>
-        </li>
-        <li>
-          <a data-scroll-nav="3" href="#work">
+          <a data-scroll-nav="3" href="#projects">
             <span class="m-icon">
               <i class="bi-columns"></i>
             </span>
-            <span class="m-text">Portfolio</span>
-          </a>
-        </li>
-        <li>
-          <a data-scroll-nav="4" href="#contactus">
-            <span class="m-icon">
-              <i class="bi-telephone"></i>
-            </span>
-            <span class="m-text">Contact</span>
+            <span class="m-text">Projects</span>
           </a>
         </li>
       </ul>
-      <!-- Top Menu -->
-      <div class="d-flex  d-lg-none navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-        aria-controls="offcanvasNavbar">
-        <div class="ms-2">
-          <button class="toggler-menu">
-            <span></span>
-          </button>
-        </div>
-      </div>
 
-      <!-- / -->
-      <!-- Offcanvas Sidebar -->
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <!-- Sidebar Menu -->
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
   </div>
   <!-- Main -->
   <main class="wrapper">
     <!-- Home -->
     <section id="home" data-scroll-index="0" class="home-section-02">
-
-      <div class="background-particle w-100 position-absolute top-0 left-0" id="particlebackground">
-
-
       </div>
+      <div class="background-particle w-100 position-absolute top-0 left-0" id="particlebackground"></div>
       <div class="ef-1"></div>
       <div class="ef-2"></div>
       <div class="container position-relative">
         <div class="row align-items-center flex-row-reverse">
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col ps-xl-5 mb-5 mb-lg-0       ">
+                <div class="home-image">
+                  <div class="home-image-in">
+                    <img src="src/img/gus.jpg" title="" alt="">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
           <div class="col ps-xl-5 mb-5 mb-lg-0">
             <div class="home-intro">
               <h6>👋 Hi, I’m</h6>
@@ -143,9 +101,6 @@
               </ul>
             </div>
           </div>
-
-        </div>
-      </div>
     </section>
     <!-- End Home -->
 
@@ -162,8 +117,10 @@
               </div>
               <div class="about-me-text pb-5">
                 <h3>My Name Is Gus</h3>
-                <p>Final year Computer Science and Information Technology student at Technological University Dublin Tallaght. I am looking forward to transitioning into
-                  a full-time software development role where I can further refine the full stack development skills that I have obtained in my academic journey and recent
+                <p>Final year Computer Science and Information Technology student at Technological University Dublin
+                  Tallaght. I am looking forward to transitioning into
+                  a full-time software development role where I can further refine the full stack development skills
+                  that I have obtained in my academic journey and recent
                   work experience.</p>
                 <div class="row pt-2">
                   <div class="col-auto">
@@ -224,7 +181,7 @@
                   </div>
                 </div>
               </div>
-              
+
             </div>
             <div class="col-lg-7 sticky-lg-top ps-xl-5">
               <div class="row align-items-start">
@@ -241,7 +198,7 @@
                       <h5>Art Director - Facebook Inc</h5>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua.</p>
-                        <a class="resume-link" href="#"><i class="fa-light fa-arrow-up-right"></i></a>
+                      <a class="resume-link" href="#"><i class="fa-light fa-arrow-up-right"></i></a>
 
                     </li>
                     <li>
@@ -252,7 +209,7 @@
                       <h5>Art Director - Facebook Inc</h5>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua.</p>
-                        <a class="resume-link" href="#"><i class="bi-arrow-up-right-circle"></i></a>
+                      <a class="resume-link" href="#"><i class="bi-arrow-up-right-circle"></i></a>
 
                     </li>
                     <li>
@@ -263,15 +220,16 @@
                       <h5>Art Director - Facebook Inc</h5>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua.</p>
-                        <a class="resume-link" href="#"><i class="bi-arrow-up-right-circle"></i></a>
+                      <a class="resume-link" href="#"><i class="bi-arrow-up-right-circle"></i></a>
 
-                        
+
                     </li>
                   </ul>
 
-           
-                  
-                </div><div class="title-01 mt-5">
+
+
+                </div>
+                <div class="title-01 mt-5">
                   <span>Education</span>
                 </div>
                 <div class="resume-box">
@@ -285,10 +243,11 @@
                       <h5>Art Director - Facebook Inc</h5>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua.</p>
-                        <a class="resume-link"><i class="bi-arrow-up-right-circle" data-bs-toggle="modal" data-bs-target="#YearOne"></i></a>
+                      <a class="resume-link"><i class="bi-arrow-up-right-circle" data-bs-toggle="modal"
+                          data-bs-target="#YearOne"></i></a>
 
                     </li>
-                    
+
 
 
                     <li>
@@ -299,10 +258,10 @@
                       <h5>Art Director - Facebook Inc</h5>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua.</p>
-                        <a class="resume-link" href="#"><i class="bi-arrow-up-right-circle"></i></a>
+                      <a class="resume-link" href="#"><i class="bi-arrow-up-right-circle"></i></a>
                     </li>
 
-                    
+
                     <li>
                       <div class="icon">
                         <i class="fas fa-briefcase"></i>
@@ -311,15 +270,15 @@
                       <h5>Art Director - Facebook Inc</h5>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua.</p>
-                        <a class="resume-link" href="#"><i class="bi-arrow-up-right-circle"></i></a>
+                      <a class="resume-link" href="#"><i class="bi-arrow-up-right-circle"></i></a>
                     </li>
                   </ul>
                 </div>
-                
 
-                
 
-                
+
+
+
               </div>
             </div>
           </div>
@@ -327,12 +286,12 @@
       </div>
     </section>
     <!-- End About -->
-    <!-- Services -->
-    <section id="services" data-scroll-index="2" class="section services-section">
+    <!-- projects -->
+    <section id="projects" data-scroll-index="2" class="section projects-section">
       <div class="container">
         <div class="section-heading">
           <h3>
-            <span>MY SERVICES</span>
+            <span>MY PROJECTS</span>
           </h3>
         </div>
         <div class="row gy-4">
@@ -380,21 +339,8 @@
                 </a>
               </div>
             </div>
-          </div> <div class="col-sm-6 col-lg-4 grid-item">
-            <div class="portfolio-box">
-              <div class="portfolio-text">
-                <h6>Mobile App Design</h6>
-                <p>Mobile App, App Design</p>
-                <a class="gallery-link" href="src/img/telegram.png"><i class="bi-arrow-up-right-circle"></i></a>
-              </div>
-              <div class="portfolio-img">
-                <img src="src/img/telegram.png" title="" alt="">
-                <a class="px_modal portfolio-modal-link" href="#project_1">
-                  <i class="fa fa-plus"></i>
-                </a>
-              </div>
-            </div>
-          </div> <div class="col-sm-6 col-lg-4 grid-item">
+          </div>
+          <div class="col-sm-6 col-lg-4 grid-item">
             <div class="portfolio-box">
               <div class="portfolio-text">
                 <h6>Mobile App Design</h6>
@@ -409,13 +355,28 @@
               </div>
             </div>
           </div>
-          
+          <div class="col-sm-6 col-lg-4 grid-item">
+            <div class="portfolio-box">
+              <div class="portfolio-text">
+                <h6>Mobile App Design</h6>
+                <p>Mobile App, App Design</p>
+                <a class="gallery-link" href="src/img/telegram.png"><i class="bi-arrow-up-right-circle"></i></a>
+              </div>
+              <div class="portfolio-img">
+                <img src="src/img/telegram.png" title="" alt="">
+                <a class="px_modal portfolio-modal-link" href="#project_1">
+                  <i class="fa fa-plus"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
 
         </div>
       </div>
     </section>
-    <!-- End Services -->
-   
+    <!-- End projects -->
+
   </main>
   <!-- Main -->
 
@@ -463,21 +424,42 @@
 
 <!-- Year 1 Modal -->
 <div class="modal fade" id="YearOne" tabindex="-1" aria-labelledby="YearOneLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="YearOneLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h1 class="modal-title fs-5" id="YearOneLabel">Grade Details</h1>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <div class="container-fluid">
+          <div class="row">
+            <!-- First Container -->
+            <div class="col-md-6">
+              <ul>
+                <li>Visual Design and User Experience <span>(A)</span></li>
+                <li>Computer Architecture (B+)</li>
+                <li>Business & Information Systems (A)</li>
+                <li>Software Development 1 (A)</li>
+                <li>Critical Skills Development (B+)</li>
+                <li>Discrete Mathematics 1 (B+)</li>
+              </ul>
+            </div>
+            <!-- Second Container -->
+            <div class="col-md-6">
+              <ul>
+                <li>Statistics (A)</li>
+                <li>Operating Systems Fundamentals (A)</li>
+                <li>Software Development 2 (A)</li>
+                <li>Social Media Communications (A)</li>
+                <li>Database Fundamentals (A)</li>
+                <li>Systems Analysis (B)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-</div>
 
 </html>

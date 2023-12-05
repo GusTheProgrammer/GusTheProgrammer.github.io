@@ -2,22 +2,61 @@
 @import "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css";
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css";
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
-/* Colour Pallete */
+/* Colour Palletes */
 :root {
-  --px-theme: #1ed760;
-  --px-theme-text: #000;
+  /* Dark Mode Variables */
+  --px-theme-dark: #1ed760;
+  --px-theme-text-dark: #000;
+  --px-bg-dark: #101216;
+  --px-text-dark: #eee;
+  --px-gray-1-dark: #16171b;
+  --px-gray-2-dark: #191b1f;
+  --px-gray-3-dark: #24252b;
+  --px-gray-4-dark: #36383c;
+  --px-gray-5-dark: #383a3e;
+  --px-border-dark: #444746;
+  --bs-heading-color-dark: #fff;
 
-  --px-bg: #101216;
-  --px-text: #eee;
+  /* Light Mode Variables */
+  --px-theme-light: #1ed760; 
+  --px-theme-text-light: #333; 
+  --px-bg-light: #f8f9fa; 
+  --px-text-light: #333; 
+  --px-gray-1-light: #eaeaea;
+  --px-gray-2-light: #d5d5d5;
+  --px-gray-3-light: #cccccc;
+  --px-gray-4-light: #b3b3b3;
+  --px-gray-5-light: #999999;
+  --px-border-light: #e0e0e0;
+  --bs-heading-color-light: #212529;
+}
 
-  --px-gray-1: #16171b;
-  --px-gray-2: #191b1f;
-  --px-gray-3: #24252b;
-  --px-gray-4: #36383c;
-  --px-gray-5: #383a3e;
-  --px-border: #444746;
+[data-theme="dark"] {
+  --px-theme: var(--px-theme-dark);
+  --px-theme-text: var(--px-theme-text-dark);
+  --px-bg: var(--px-bg-dark);
+  --px-text: var(--px-text-dark);
+  --px-gray-1: var(--px-gray-1-dark);
+  --px-gray-2: var(--px-gray-2-dark);
+  --px-gray-3: var(--px-gray-3-dark);
+  --px-gray-4: var(--px-gray-4-dark);
+  --px-gray-5: var(--px-gray-5-dark);
+  --px-border: var(--px-border-dark);
+  --bs-heading-color: var(--bs-heading-color-dark);
+}
 
-  --bs-heading-color: #fff;
+[data-theme="light"] {
+  --px-theme: var(--px-theme-light);
+  --px-theme-text: var(--px-theme-text-light);
+  --px-bg: var(--px-bg-light);
+  --px-text: var(--px-text-light);
+  --px-gray-1: var(--px-gray-1-light);
+  --px-gray-2: var(--px-gray-2-light);
+  --px-gray-3: var(--px-gray-3-light);
+  --px-gray-4: var(--px-gray-4-light);
+  --px-gray-5: var(--px-gray-5-light);
+  --px-border: var(--px-border-light);
+  --bs-heading-color: var(--bs-heading-color-light);
 }
 
 .logo-light {
@@ -121,6 +160,10 @@
   padding: 15px 0;
   right: 0;
 }
+
+.header-top-fixed.solid-bg {
+  background-color: var(--px-gray-1);
+}
 .header-top-fixed > .container {
   display: -ms-flexbox;
   display: flex;
@@ -149,7 +192,7 @@
   background-color: var(--px-theme);
   color: var(--px-theme-text);
 }
-@media (max-width: 1200px) {
+@media (max-width: 200px) {
   .header-top-fixed .main-menu {
     position: absolute;
     top: 100%;
@@ -166,7 +209,7 @@
     margin: 5px 0;
   }
 }
-@media (min-width: 1201px) {
+@media (min-width: 201px) {
   .header-top-fixed + .wrapper .sticky-lg-top {
     top: 60px;
   }
@@ -463,6 +506,23 @@ a {
   pointer-events: none;
   z-index: -1;
 }
+
+.home-section-02 .home-image .home-image-in {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 12px solid var(--px-gray-3);
+  box-shadow: 0 0 0 12px var(--px-gray-1);
+}
+
+.home-section-02 .home-image .home-image-in img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .about-me-text {
   padding: 0 10% 0 0;
 }
@@ -757,4 +817,65 @@ a {
 #particlebackground {
   width: 100%;
   height: 100%;
+}
+
+
+/* Modal Custom Styles */
+.modal-content {
+  background-color: var(--px-bg);
+  color: var(--px-text);
+  border: 2px solid var(--px-border);
+}
+
+.modal-header {
+  border-color: var(--px-border);
+}
+
+.modal-title {
+  color: var(--px-theme);
+}
+
+
+/* Dark/Light mode toggle */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-switch .switch {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+}
+
+.toggle-switch .switch:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .switch {
+  background-color: var(--px-theme);
+}
+
+input:checked + .switch:before {
+  transform: translateX(26px);
 }

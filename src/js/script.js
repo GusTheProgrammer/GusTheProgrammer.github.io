@@ -1,10 +1,12 @@
-function initParticles() {
-  // Particle Effect for Background
+function initParticles(theme) {
+  // Choose particle config file based on theme
+  var configFileName = theme === 'light' ? 'src/config/light-particles-config.json' : 'src/config/dark-particles-config.json';
+
   particlesJS.load(
     "particlebackground",
-    "src/particles-config.json",
+    configFileName,
     function () {
-      console.log("callback - particles.js config loaded");
+      console.log("callback - particles.js config loaded for " + theme + " mode");
     }
   );
 }
@@ -50,9 +52,54 @@ function initScrollIt() {
   });
 }
 
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  document.cookie = "theme=" + theme + ";path=/;max-age=31536000"; // 1 year
+}
+
+function getCookie(name) {
+  var cookieArr = document.cookie.split(";");
+  for(var i = 0; i < cookieArr.length; i++) {
+    var cookiePair = cookieArr[i].split("=");
+    if(name == cookiePair[0].trim()) {
+      return decodeURIComponent(cookiePair[1]);
+    }
+  }
+  return null;
+}
+
+function applySavedTheme() {
+  var savedTheme = getCookie('theme') || 'dark'; // Default to dark mode
+  var toggleSwitch = document.getElementById('theme-toggle');
+  toggleSwitch.checked = (savedTheme === 'light');
+  setTheme(savedTheme);
+}
+
+document.getElementById('theme-toggle').addEventListener('change', function() {
+  var newTheme = this.checked ? 'light' : 'dark';
+  setTheme(newTheme);
+});
+
+window.addEventListener('scroll', function() {
+  var aboutSection = document.getElementById('about');
+  var header = document.querySelector('.header-top-fixed');
+  
+  // Get the position of the about section
+  var aboutPosition = aboutSection.offsetTop;
+
+  // Check if the current scroll position is greater than or equal to the about section's position
+  if (window.pageYOffset >= aboutPosition) {
+    header.classList.add('solid-bg');
+  } else {
+    header.classList.remove('solid-bg');
+  }
+});
+
 window.addEventListener("DOMContentLoaded", (event) => {
-  initParticles();
+  var savedTheme = getCookie('theme') || 'dark';
+  initParticles(savedTheme);
   initProgressBar();
   typeIt();
   initScrollIt();
+  applySavedTheme();
 });
