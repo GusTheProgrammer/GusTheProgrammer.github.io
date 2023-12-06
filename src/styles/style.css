@@ -740,6 +740,42 @@ a {
   transform: rotate(0deg);
 }
 
+/* Feature Box Image Styling */
+.feature-box-01 .feature-image {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.feature-box-01 .feature-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Overlay Icon Styling */
+.feature-box-01 .overlay-icon {
+  position: absolute;
+  top: 15px; /* adjust as needed */
+  right: 15px; /* adjust as needed */
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--px-theme);
+  color: var(--px-theme-text);
+  border-radius: 50%;
+  opacity: 0; /* initially hidden */
+  transition: ease all 0.35s;
+}
+
+/* Show Overlay Icon on Hover */
+.feature-box-01:hover .overlay-icon {
+  opacity: 1;
+}
+
+
 .portfolio-box {
   border: 2px solid var(--px-border);
   padding: 10px;
@@ -879,3 +915,226 @@ input:checked + .switch {
 input:checked + .switch:before {
   transform: translateX(26px);
 }
+
+
+
+
+.px-btn {
+  padding: 15px 35px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  background-color: var(--px-theme);
+  color: var(--px-theme-text);
+  text-decoration: none;
+  border-radius: 10px;
+  transition: ease all 0.35s;
+  font-weight: 500;
+  outline: none;
+  box-shadow: none;
+  border: 2px solid var(--px-theme);
+}
+.px-btn:hover {
+  background-color: var(--px-theme-text);
+  color: var(--px-theme);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: inherit;
+  }
+}
+
+* {
+  outline: none !important;
+}
+
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+@media (max-width: 1200px) {
+  .section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+@media (max-width: 767px) {
+  .section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+
+.contact-form {
+  padding: 40px;
+  border: 2px solid var(--px-border);
+  border-radius: 16px;
+  background-color: var(--px-bg);
+}
+@media (max-width: 991px) {
+  .contact-form {
+    padding: 30px;
+  }
+}
+.contact-form .contact-head {
+  padding-bottom: 20px;
+}
+.contact-form .contact-head h4 {
+  font-size: 32px;
+  max-width: 500px;
+}
+@media (max-width: 991px) {
+  .contact-form .contact-head h4 {
+    font-size: 25px;
+  }
+}
+.contact-form .contact-head p {
+  font-size: 17px;
+}
+@media (max-width: 991px) {
+  .contact-form .contact-head p {
+    font-size: 15px;
+  }
+}
+.contact-form .form-label {
+  font-size: 12px;
+}
+.contact-form .form-control {
+  background-color: var(--px-bg);
+  border: 1px solid var(--px-border);
+  box-shadow: none;
+  padding: 0.675rem 0.75rem;
+}
+
+.contact-info h3 {
+  margin-bottom: 30px;
+}
+.contact-info .google-map {
+  background-color: var(--px-bg);
+  border: 2px solid var(--px-border);
+  padding: 10px;
+  border-radius: 10px;
+}
+.contact-info ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.contact-info li {
+  display: -ms-flexbox;
+  display: flex;
+}
+.contact-info li + li {
+  margin-top: 40px;
+}
+.contact-info .text {
+  -ms-flex: 1;
+      flex: 1;
+  padding-left: 20px;
+}
+.contact-info .text label {
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--bs-heading-color);
+}
+.contact-info .text p {
+  margin: 0;
+}
+.contact-info .text p span {
+  display: block;
+  width: 100%;
+  font-weight: 600;
+}
+.contact-info .icon {
+  width: 60px;
+  height: 60px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  border-radius: 50%;
+  background-color: var(--px-theme-text);
+  color: var(--px-theme);
+  font-size: 20px;
+}
+
+
+/* Toast Styling */
+.toast-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+/* Central Toast Positioning */
+.toast-container {
+  width: 100%;
+  max-width: 350px; 
+}
+
+/* Toast Styling for Light and Dark Modes */
+.toast {
+  background-color: var(--px-bg);
+  color: var(--px-text);
+  border: 1px solid var(--px-border);
+}
+
+.toast-header {
+  background-color: var(--px-gray-3);
+  color: var(--px-text);
+}
+
+.toast-body {
+  background-color: var(--px-bg);
+  color: var(--px-text);
+}
+
+
+#featureCarousel .carousel-inner {
+  display: flex;
+  align-items: center;
+}
+
+#featureCarousel .carousel-item {
+  opacity: 0.5; /* Dim non-active items */
+  transition: all 0.5s ease;
+}
+
+#featureCarousel .carousel-item.active {
+  opacity: 1; /* Highlight active item */
+  transform: scale(1.2); /* Make active item larger */
+}
+
+#featureCarousel .carousel-item .feature-box-01 {
+  transition: transform 0.5s ease;
+}
+
+#featureCarousel .carousel-control-prev,
+#featureCarousel .carousel-control-next {
+  width: 5%;
+}
+
+/* Optional: Adjust the size of the carousel controls if necessary */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 30px;
+  height: 30px;
+}
+
+

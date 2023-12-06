@@ -85,6 +85,7 @@ document.getElementById('theme-toggle').addEventListener('change', function() {
   setTheme(newTheme);
 });
 
+// Adding a solid background to the header when scrolling down
 window.addEventListener('scroll', function() {
   var aboutSection = document.getElementById('about');
   var header = document.querySelector('.header-top-fixed');
@@ -99,6 +100,27 @@ window.addEventListener('scroll', function() {
     header.classList.remove('solid-bg');
   }
 });
+
+// Show the toast when the contact form is submitted
+document.getElementById('emailForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    var toastEl = document.getElementById('liveToast');
+    var overlayEl = document.getElementById('toastOverlay');
+    var toast = new bootstrap.Toast(toastEl);
+
+    // Show the overlay
+    overlayEl.style.display = 'flex';
+
+    // Show the toast
+    toast.show();
+
+    // Hide the overlay when the toast is hidden
+    toastEl.addEventListener('hidden.bs.toast', function () {
+        overlayEl.style.display = 'none';
+    });
+});
+
 
 window.addEventListener("DOMContentLoaded", (event) => {
   var savedTheme = getCookie('theme') || 'dark';
