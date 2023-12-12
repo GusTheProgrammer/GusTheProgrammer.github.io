@@ -1,28 +1,13 @@
-function initParticles(theme) {
-  // Choose particle config file based on theme
-  var configFileName = theme === 'light' ? 'src/config/light-particles-config.json' : 'src/config/dark-particles-config.json';
-
-  particlesJS.load(
-    "particlebackground",
-    configFileName,
-    function () {
-      console.log("callback - particles.js config loaded for " + theme + " mode");
-    }
-  );
-}
-
 function initProgressBar() {
-  const progressBars = document.querySelectorAll(".skill-bar .skill-bar-in");
-  progressBars.forEach((bar) => {
-    const progressWidth = bar.getAttribute("aria-valuenow") + "%";
-    bar.style.width = progressWidth;
+  document.querySelectorAll(".skill-bar .skill-bar-in").forEach((bar) => {
+    bar.style.width = bar.getAttribute("aria-valuenow") + "%";
   });
 }
 
 function typeIt() {
   const element = document.getElementById("type-it");
   if (element) {
-    new TypeIt("#type-it", {
+    new TypeIt(element, {
       speed: 200,
       loop: false,
       strings: ["Software Developer..."],
@@ -31,102 +16,112 @@ function typeIt() {
   }
 }
 
-function initScrollIt() {
-  // Select all navigation links
-  const navLinks = document.querySelectorAll(".one-page-nav a");
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
+function addSmoothScrolling() {
+  document.querySelectorAll(".one-page-nav a").forEach((link) => {
+    link.addEventListener("click", (e) => {
       e.preventDefault();
-      const targetId = this.getAttribute("href");
-      const targetElement = document.querySelector(targetId);
-
-      if (targetElement) {
-        // Scroll to the target element
-        targetElement.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
+      const target = document.querySelector(link.getAttribute("href"));
+      target?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 }
 
-function setTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  document.cookie = "theme=" + theme + ";path=/;max-age=31536000"; // 1 year
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  document.cookie = `theme=${theme};path=/;max-age=31536000`; // 1 year
+  document.getElementById("theme-toggle").checked = theme === "light";
 }
 
-function getCookie(name) {
-  var cookieArr = document.cookie.split(";");
-  for(var i = 0; i < cookieArr.length; i++) {
-    var cookiePair = cookieArr[i].split("=");
-    if(name == cookiePair[0].trim()) {
-      return decodeURIComponent(cookiePair[1]);
-    }
-  }
-  return null;
+function getCookieValue(name) {
+  const cookieValue = document.cookie
+    .split('; ')
+    .find(row => row.startsWith(name))
+    ?.split('=')[1];
+  return cookieValue || "dark"; // Default to dark mode
 }
 
-function applySavedTheme() {
-  var savedTheme = getCookie('theme') || 'dark'; // Default to dark mode
-  var toggleSwitch = document.getElementById('theme-toggle');
-  toggleSwitch.checked = (savedTheme === 'light');
-  setTheme(savedTheme);
+function toggleTheme(event) {
+  applyTheme(event.target.checked ? "light" : "dark");
 }
 
-function openWebsiteInNewTab(url) {
-  window.open(url, '_blank').focus();
+function createToast() {
+  const toastEl = document.getElementById("liveToast");
+  return new bootstrap.Toast(toastEl);
 }
 
+function showToast() {
+  document.getElementById("toastOverlay").style.display = "flex";
+  createToast().show();
+}
 
-document.getElementById('theme-toggle').addEventListener('change', function() {
-  var newTheme = this.checked ? 'light' : 'dark';
-  setTheme(newTheme);
-});
+function hideToast() {
+  document.getElementById("toastOverlay").style.display = "none";
+}
 
-// Adding a solid background to the header when scrolling down
-window.addEventListener('scroll', function() {
-  var aboutSection = document.getElementById('about');
-  var header = document.querySelector('.header-top-fixed');
-  
-  // Get the position of the about section
-  var aboutPosition = aboutSection.offsetTop;
+function setupEventListeners() {
+  document.getElementById("theme-toggle")?.addEventListener("change", toggleTheme);
+  document.getElementById("emailForm")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    showToast();
+  });
+  document.getElementById("liveToast")?.addEventListener("hidden.bs.toast", hideToast);
+}
 
-  // Check if the current scroll position is greater than or equal to the about section's position
-  if (window.pageYOffset >= aboutPosition) {
-    header.classList.add('solid-bg');
-  } else {
-    header.classList.remove('solid-bg');
-  }
-});
+function populateTableData(data, container) {
+  container.innerHTML = ''; // Clear existing content
+  const row = document.createElement('div');
+  row.className = 'row';
 
-// Show the toast when the contact form is submitted
-document.getElementById('emailForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting
+  Object.entries(data).forEach(([semester, courses]) => {
+    const col = document.createElement('div');
+    col.className = 'col-md-6';
+    const table = document.createElement('table');
+    table.className = 'table';
+    col.appendChild(table);
+    row.appendChild(col);
 
-    var toastEl = document.getElementById('liveToast');
-    var overlayEl = document.getElementById('toastOverlay');
-    var toast = new bootstrap.Toast(toastEl);
+    const thead = table.createTHead();
+    const headerRow = thead.insertRow();
+    headerRow.innerHTML = `<th colspan="2">${semester}</th>`;
+    const tbody = table.createTBody();
 
-    // Show the overlay
-    overlayEl.style.display = 'flex';
-
-    // Show the toast
-    toast.show();
-
-    // Hide the overlay when the toast is hidden
-    toastEl.addEventListener('hidden.bs.toast', function () {
-        overlayEl.style.display = 'none';
+    courses.forEach(({ course, grade }) => {
+      const courseRow = tbody.insertRow();
+      courseRow.innerHTML = `<td>${course}</td><td>${grade}</td>`;
     });
-});
+  });
 
+  container.appendChild(row);
+}
 
-window.addEventListener("DOMContentLoaded", (event) => {
-  var savedTheme = getCookie('theme') || 'dark';
-  initParticles(savedTheme);
+function setupModals() {
+  ['YearOne', 'YearTwo', 'YearThree'].forEach((year) => {
+    const modal = document.getElementById(year);
+    modal?.addEventListener('show.bs.modal', () => {
+      fetch('src/data/grades.json')
+        .then(response => response.json())
+        .then(data => populateTableData(data[year], modal.querySelector('.modal-body')))
+        .catch(error => console.error('Error:', error));
+    });
+  });
+}
+
+window.addEventListener("DOMContentLoaded", () => {
   initProgressBar();
   typeIt();
-  initScrollIt();
-  applySavedTheme();
+  addSmoothScrolling();
+  applyTheme(getCookieValue("theme"));
+  setupEventListeners();
+  setupModals();
+
+  window.addEventListener("scroll", () => {
+    const header = document.querySelector(".header-top-fixed");
+    if (header) {
+      header.classList.toggle(
+        "solid-bg",
+        window.pageYOffset >= (document.getElementById("about")?.offsetTop || 0)
+      );
+    }
+  });
 });

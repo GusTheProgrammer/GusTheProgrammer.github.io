@@ -850,9 +850,15 @@ a {
   opacity: 1;
 }
 
-#particlebackground {
+#neon-background {
   width: 100%;
   height: 100%;
+}
+
+#neon-background canvas {
+  display: block;
+  z-index: -1;
+  top: 0;
 }
 
 
@@ -1010,6 +1016,11 @@ input:checked + .switch:before {
   border: 1px solid var(--px-border);
   box-shadow: none;
   padding: 0.675rem 0.75rem;
+}
+
+
+::placeholder { /* Most modern browsers support this now. */
+  color:    #909;
 }
 
 .contact-info h3 {

@@ -1,0 +1,56 @@
+{
+  "YearOne": {
+    "SemesterOne": [
+      { "course": "Visual Design and User Experience", "grade": "A" },
+      { "course": "Computer Architecture", "grade": "B+" },
+      { "course": "Business & Information Systems", "grade": "A" },
+      { "course": "Software Development 1", "grade": "A" },
+      { "course": "Critical Skills Development", "grade": "B+" },
+      { "course": "Discrete Mathematics 1", "grade": "B+" }
+    ],
+    "SemesterTwo": [
+      { "course": "Statistics", "grade": "A" },
+      { "course": "Operating Systems Fundamentals", "grade": "A" },
+      { "course": "Software Development 2", "grade": "A" },
+      { "course": "Social Media Communications", "grade": "A" },
+      { "course": "Database Fundamentals", "grade": "A" },
+      { "course": "Systems Analysis", "grade": "B" }
+    ]
+  },
+  "YearTwo": {
+    "SemesterOne": [
+      { "course": "Visual Design and User Experience", "grade": "A" },
+      { "course": "Computer Architecture", "grade": "B+" },
+      { "course": "Business & Information Systems", "grade": "A" },
+      { "course": "Software Development 1", "grade": "A" },
+      { "course": "Critical Skills Development", "grade": "B+" },
+      { "course": "Discrete Mathematics 1", "grade": "B+" }
+    ],
+    "SemesterTwo": [
+      { "course": "Statistics", "grade": "A" },
+      { "course": "Operating Systems Fundamentals", "grade": "A" },
+      { "course": "Software Development 2", "grade": "A" },
+      { "course": "Social Media Communications", "grade": "A" },
+      { "course": "Database Fundamentals", "grade": "A" },
+      { "course": "Systems Analysis", "grade": "B" }
+    ]
+  },
+  "YearThree": {
+    "SemesterOne": [
+      { "course": "Visual Design and User Experience", "grade": "A" },
+      { "course": "Computer Architecture", "grade": "B+" },
+      { "course": "Business & Information Systems", "grade": "A" },
+      { "course": "Software Development 1", "grade": "A" },
+      { "course": "Critical Skills Development", "grade": "B+" },
+      { "course": "Discrete Mathematics 1", "grade": "B+" }
+    ],
+    "SemesterTwo": [
+      { "course": "Statistics", "grade": "A" },
+      { "course": "Operating Systems Fundamentals", "grade": "A" },
+      { "course": "Software Development 2", "grade": "A" },
+      { "course": "Social Media Communications", "grade": "A" },
+      { "course": "Database Fundamentals", "grade": "A" },
+      { "course": "Systems Analysis", "grade": "B" }
+    ]
+  }
+}
