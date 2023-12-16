@@ -68,6 +68,10 @@ function setupEventListeners() {
   document.getElementById("liveToast")?.addEventListener("hidden.bs.toast", hideToast);
 }
 
+function openWebsiteInNewTab(url) {
+  window.open(url, '_blank').focus();
+}
+
 function populateTableData(data, container) {
   container.innerHTML = ''; // Clear existing content
   const row = document.createElement('div');
@@ -77,7 +81,7 @@ function populateTableData(data, container) {
     const col = document.createElement('div');
     col.className = 'col-md-6';
     const table = document.createElement('table');
-    table.className = 'table';
+    table.className = 'table table-dark table-striped';
     col.appendChild(table);
     row.appendChild(col);
 

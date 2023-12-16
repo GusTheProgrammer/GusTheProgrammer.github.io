@@ -1,6 +1,6 @@
 {
   "YearOne": {
-    "SemesterOne": [
+    "Semester One": [
       { "course": "Visual Design and User Experience", "grade": "A" },
       { "course": "Computer Architecture", "grade": "B+" },
       { "course": "Business & Information Systems", "grade": "A" },
@@ -8,7 +8,7 @@
       { "course": "Critical Skills Development", "grade": "B+" },
       { "course": "Discrete Mathematics 1", "grade": "B+" }
     ],
-    "SemesterTwo": [
+    "Semester Two": [
       { "course": "Statistics", "grade": "A" },
       { "course": "Operating Systems Fundamentals", "grade": "A" },
       { "course": "Software Development 2", "grade": "A" },
@@ -18,39 +18,34 @@
     ]
   },
   "YearTwo": {
-    "SemesterOne": [
-      { "course": "Visual Design and User Experience", "grade": "A" },
-      { "course": "Computer Architecture", "grade": "B+" },
-      { "course": "Business & Information Systems", "grade": "A" },
-      { "course": "Software Development 1", "grade": "A" },
-      { "course": "Critical Skills Development", "grade": "B+" },
-      { "course": "Discrete Mathematics 1", "grade": "B+" }
+    "Semester One": [
+      { "course": "Software Development 3", "grade": "A" },
+      { "course": "Software Quality Assurance and Testing", "grade": "A" },
+      { "course": "Advanced Database Technologies", "grade": "B+" },
+      { "course": "Network Fundamentals", "grade": "A" },
+      { "course": "Client-Side Web Development", "grade": "A" },
+      { "course": "Discrete Mathematics 2", "grade": "A" }
     ],
-    "SemesterTwo": [
-      { "course": "Statistics", "grade": "A" },
-      { "course": "Operating Systems Fundamentals", "grade": "A" },
-      { "course": "Software Development 2", "grade": "A" },
-      { "course": "Social Media Communications", "grade": "A" },
-      { "course": "Database Fundamentals", "grade": "A" },
-      { "course": "Systems Analysis", "grade": "B" }
+    "Semester Two": [
+      { "course": "Software Development 4", "grade": "B+" },
+      { "course": "Data Administration and Analysis", "grade": "B+" },
+      { "course": "Routing & Switching Essentials", "grade": "B+" },
+      { "course": "Information Security", "grade": "B" },
+      { "course": "Management Science", "grade": "B-" },
+      { "course": "Project", "grade": "A" }
     ]
   },
   "YearThree": {
-    "SemesterOne": [
-      { "course": "Visual Design and User Experience", "grade": "A" },
-      { "course": "Computer Architecture", "grade": "B+" },
-      { "course": "Business & Information Systems", "grade": "A" },
-      { "course": "Software Development 1", "grade": "A" },
-      { "course": "Critical Skills Development", "grade": "B+" },
-      { "course": "Discrete Mathematics 1", "grade": "B+" }
+    "Semester One": [
+      { "course": "Server-side Web Development", "grade": "B+" },
+      { "course": "Operating Systems", "grade": "B" },
+      { "course": "Cloud Service & Distributed Computing", "grade": "B" },
+      { "course": "Big Data Technologies", "grade": "B" },
+      { "course": "Data Structures & Algorithms", "grade": "B" },
+      { "course": "Data Analysis", "grade": "B" }
     ],
-    "SemesterTwo": [
-      { "course": "Statistics", "grade": "A" },
-      { "course": "Operating Systems Fundamentals", "grade": "A" },
-      { "course": "Software Development 2", "grade": "A" },
-      { "course": "Social Media Communications", "grade": "A" },
-      { "course": "Database Fundamentals", "grade": "A" },
-      { "course": "Systems Analysis", "grade": "B" }
+    "Semester Two": [
+      { "course": "Work Placement", "grade": "Passed" }
     ]
   }
 }
