@@ -10,7 +10,7 @@ function typeIt() {
     new TypeIt(element, {
       speed: 200,
       loop: false,
-      strings: ["Software Developer..."],
+      strings: ["I'm a Software Developer...", "I write code 📎"],
       breakLines: false,
     });
   }
