@@ -1,0 +1,78 @@
+header:
+  email: "ghiathchaal.beg@gmail.com"
+  phone: "+353 899 788 046"
+  name: "Gus Shaal"
+  personalWebsite: "GusTheProgrammer.github.io"
+  github: "github.com/GusTheProgrammer"
+  linkedIn: "linkedin.com/in/gus-shaal"
+
+education:
+  location: "Dublin, Ireland"
+  institution: "Technological University Dublin"
+  dateRange: "Sep 2020 – May 2024"
+  details:
+    - "BSc in Computing with Software Development (3.5 GPA)"
+
+workExperience:
+  - role: "Associate Software Engineer"
+    employer: "Fidelity Investments"
+    location: "Dublin, Ireland"
+    dateRange: "Jan 2024 – Present"
+    points:
+      - "Completed full stack training program (Java, Spring Boot, Angular, Node.js)"
+      - "Implementing process automation solutions using Camunda engine"
+      - "Working with Backstage for internal developer productivity"
+
+  - role: "Software Engineering Intern"
+    employer: "Fidelity Investments"
+    location: "Dublin, Ireland"
+    dateRange: "Jan 2023 – Aug 2023"
+    points:
+      - "Developed Collibra metadata automation tool with Spring Boot"
+      - "Created Python scripts for AtScale telemetry data collection"
+      - "Redesigned charity website using React"
+      - "Worked with Snowflake and data lake technologies"
+
+  - role: "Research Volunteer"
+    employer: "CSinc – TUD Tallaght"
+    location: "Dublin, Ireland"
+    dateRange: "May 2021 – Sep 2021"
+    points:
+      - "Improved technical learning materials delivery systems"
+      - "Researched innovative methods for content presentation"
+
+projects:
+  - name: "Workforce Management System"
+    url: "https://github.com/GusTheProgrammer/workforce-app"
+    points:
+      - "Full stack development with Next.js, Prisma, and Postgres Implemented shift management help me "
+      - "Full stack development with Next.js, Prisma, and Postgres Implemented shift management help me "
+      - "Full stack development with Next.js, Prisma, and Postgres Implemented shift management help me "
+      - "Full stack development with Next.js, Prisma, and Postgres Implemented shift management help me "
+
+  - name: "Git Tree View"
+    url: "https://github.com/GusTheProgrammer/git-tree-view"
+    points:
+      - "Browse a Git Repository like a file explorer"
+      - "Built with React and Node.js"
+      - "Supports branch and commit history"
+
+technicalSkills:
+  - category: "Languages"
+    items: ["Java", "Python", "JavaScript", "SQL", "Bash"]
+  - category: "Frameworks"
+    items: ["Spring Boot", "Angular", "React", "Node.js", "Django"]
+  - category: "Tools"
+    items: ["Git", "Docker", "CI/CD Pipelines", "Postgres", "Redis"]
+  - category: "Cloud"
+    items: ["AWS", "Snowflake", "Datadog"]
+  - category: "Practices"
+    items: ["Agile Development", "REST API Design", "TDD"]
+
+achievements:
+  - "TUH Hackathon 2023 Winner - Best Future Solution"
+  - "WorldSkills Cloud Computing Competition Winner 2022"
+
+additional:
+  interests: ["Tabletop Games", "Open Source Contributions", "Fitness"]
+  references: "Available on request"
