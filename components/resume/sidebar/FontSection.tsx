@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { SidebarSection } from "@/components/sidebar/SidebarSection";
+import { SidebarSection } from "@/components/resume/sidebar/SidebarSection";
 import { Type } from "lucide-react";
-import { SliderComponent } from "@/components/sidebar/SliderComponent";
+import { SliderComponent } from "@/components/resume/sidebar/SliderComponent";
 import { fonts } from "@/lib/constants";
 import { loadFont } from "@/lib/fontUtils";
 import { Autocomplete, AutocompleteItem } from "@heroui/react";

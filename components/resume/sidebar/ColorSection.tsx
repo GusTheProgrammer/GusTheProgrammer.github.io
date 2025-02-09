@@ -1,7 +1,7 @@
 'use client';
 
-import { SidebarSection } from "@/components/sidebar/SidebarSection";
-import ColorPicker from "@/components/sidebar/ColorPicker";
+import { SidebarSection } from "@/components/resume/sidebar/SidebarSection";
+import ColorPicker from "@/components/resume/sidebar/ColorPicker";
 import { Palette } from "lucide-react";
 import { useThemeSettingsStore } from "@/stores/useThemeSettingsStore";
 

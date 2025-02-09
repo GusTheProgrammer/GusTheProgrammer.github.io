@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SidebarSection } from "@/components/sidebar/SidebarSection";
+import { SidebarSection } from "@/components/resume/sidebar/SidebarSection";
 import { Palette } from "lucide-react";
 import { ThemeList } from "@/lib/constants";
 import { Autocomplete, AutocompleteItem } from "@heroui/react";

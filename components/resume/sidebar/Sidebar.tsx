@@ -1,10 +1,10 @@
 'use client';
 
-import { ThemeSection } from "@/components/sidebar/ThemeSection";
-import { FontSection } from "@/components/sidebar/FontSection";
-import { LayoutSection } from "@/components/sidebar/LayoutSection";
-import { SidebarButtons } from "@/components/sidebar/SidebarButtons";
-import ColorSection from "@/components/sidebar/ColorSection";
+import { ThemeSection } from "@/components/resume/sidebar/ThemeSection";
+import { FontSection } from "@/components/resume/sidebar/FontSection";
+import { LayoutSection } from "@/components/resume/sidebar/LayoutSection";
+import { SidebarButtons } from "@/components/resume/sidebar/SidebarButtons";
+import ColorSection from "@/components/resume/sidebar/ColorSection";
 import { Button, Drawer, DrawerBody, DrawerContent, DrawerFooter, DrawerHeader, useDisclosure } from "@heroui/react";
 import { useEffect, useRef } from "react";
 

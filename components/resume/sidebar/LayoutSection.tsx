@@ -1,7 +1,7 @@
 'use client';
 
-import { SidebarSection } from "@/components/sidebar/SidebarSection";
-import { SliderComponent } from "@/components/sidebar/SliderComponent";
+import { SidebarSection } from "@/components/resume/sidebar/SidebarSection";
+import { SliderComponent } from "@/components/resume/sidebar/SliderComponent";
 import { Layout } from "lucide-react";
 import { useThemeSettingsStore } from "@/stores/useThemeSettingsStore";
 

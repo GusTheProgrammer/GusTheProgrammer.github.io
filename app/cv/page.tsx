@@ -5,8 +5,8 @@ import Loading from "@/components/Loading";
 import { useReactToPrint } from "react-to-print";
 import { useResumeStyles } from "@/hooks/useResumeStyles";
 import Resume from "@/components/resume/Resume";
-import Sidebar from "@/components/sidebar/Sidebar";
-import SidebarTrigger from "@/components/sidebar/SidebarTrigger";
+import Sidebar from "@/components/resume/sidebar/Sidebar";
+import SidebarTrigger from "@/components/resume/sidebar/SidebarTrigger";
 import { useResumeStore } from "@/stores/useResumeStore";
 
 export default function Home() {
