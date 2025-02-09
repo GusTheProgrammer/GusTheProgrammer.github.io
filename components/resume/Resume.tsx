@@ -1,46 +1,34 @@
 'use client';
 
-import ResumeContent from "@/components/resume/ResumeContent";
-import {ResumeData} from "@/types/resume";
-import Sidebar from "@/components/sidebar/Sidebar"
-import {useRef, useState} from "react";
-import {useReactToPrint} from "react-to-print";
-import SidebarTrigger from "@/components/sidebar/SidebarTrigger";
-import {useResumeStyles} from "@/hooks/useResumeStyles";
+import { RefObject } from "react";
+import { ResumeData } from "@/types/resume";
+import { Header } from "@/components/resume/sections/Header";
+import { Education } from "@/components/resume/sections/Education";
+import { WorkExperience } from "@/components/resume/sections/WorkExperience";
+import { Projects } from "@/components/resume/sections/Projects";
+import { TechnicalSkills } from "@/components/resume/sections/TechnicalSkills";
+import { AdditionalInfo } from "@/components/resume/sections/AdditionalInfo";
+import { useThemeSettingsStore } from "@/stores/useThemeSettingsStore";
 
-interface ResumeProps {
-    resumeData: ResumeData;
+interface Resume {
+    data: ResumeData;
+    resumeContainerRef?: RefObject<HTMLDivElement>;
 }
 
-function Resume({resumeData}: ResumeProps) {
-    const [sidebarOpen, setSidebarOpen] = useState(false);
-    const resumeContainerRef = useRef<HTMLDivElement>(null!);
-    const resumeRefContent = () => resumeContainerRef.current;
-    const handlePrint = useReactToPrint({
-        documentTitle: "GusCV",
-    });
-
-    // Apply resume styles
-    useResumeStyles(resumeContainerRef);
-
+export default function Resume({ data, resumeContainerRef }: Resume) {
+    const { theme, font } = useThemeSettingsStore();
     return (
-        <div className="flex items-center justify-center min-h-screen w-full relative">
-            <div className={`transition-all duration-300 
-                ${sidebarOpen ? "mr-[500]" : ""}`}>
-                <ResumeContent
-                    data={resumeData}
-                    resumeContainerRef={resumeContainerRef}
-                />
-            </div>
-            <Sidebar
-                handlePrint={() => handlePrint(resumeRefContent)}
-                onIsOpenChange={(isOpen) => setSidebarOpen(isOpen)}
-            />
-            {!sidebarOpen && (
-                <SidebarTrigger onTrigger={(isOpen) => setSidebarOpen(isOpen)}/>
-            )}
+        <div
+            ref={resumeContainerRef}
+            className={`resumeContainer relative rounded overflow-auto custom-scrollbar theme bg-white border border-gray-200 prose max-w-none text-[#1c2024] p-3 ${theme?.toLowerCase()} w-a4 h-a4`}
+            style={{ fontFamily: font }}
+        >
+            <Header data={data.header}/>
+            <WorkExperience experiences={data.workExperience}/>
+            <Education data={data.education}/>
+            <Projects projects={data.projects}/>
+            <TechnicalSkills skills={data.technicalSkills}/>
+            <AdditionalInfo data={data.additional}/>
         </div>
     );
 }
-
-export default Resume;

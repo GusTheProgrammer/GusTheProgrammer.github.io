@@ -1,13 +1,13 @@
 "use client";
 
-import React, {useState, useEffect} from "react";
-import {SidebarSection} from "@/components/sidebar/SidebarSection";
-import {Type} from "lucide-react";
-import {SliderComponent} from "@/components/sidebar/SliderComponent";
-import {fonts} from "@/lib/constants";
-import {loadFont} from "@/lib/fontUtils";
-import {Autocomplete, AutocompleteItem} from "@heroui/react";
-import {useThemeSettingsStore} from "@/stores/useThemeSettingsStore";
+import React, { useState, useEffect } from "react";
+import { SidebarSection } from "@/components/sidebar/SidebarSection";
+import { Type } from "lucide-react";
+import { SliderComponent } from "@/components/sidebar/SliderComponent";
+import { fonts } from "@/lib/constants";
+import { loadFont } from "@/lib/fontUtils";
+import { Autocomplete, AutocompleteItem } from "@heroui/react";
+import { useThemeSettingsStore } from "@/stores/useThemeSettingsStore";
 
 export function FontSection() {
     const {
@@ -24,21 +24,21 @@ export function FontSection() {
         key: fontKey,
         label: fontKey,
     }));
-    const [selectedKey, setSelectedKey] = useState<string>(font);
+    const [ selectedKey, setSelectedKey ] = useState<string>(font);
 
     useEffect(() => {
         setSelectedKey(font);
-    }, [font]);
+    }, [ font ]);
 
     const handleSelectionChange = (key: string | number | null) => {
         if (key === null) {
             const defaultFont = "Open Sans";
             setFont(defaultFont);
-            loadFont(fonts[defaultFont]);
+            loadFont(fonts[ defaultFont ]);
             return;
         }
         setFont(key as string);
-        loadFont(fonts[key as string]);
+        loadFont(fonts[ key as string ]);
     };
 
 

@@ -13,7 +13,7 @@ interface SliderProps {
 export const SliderComponent = ({ label, value, min, max, step, onChange, currentValue }: SliderProps) => {
     const handleChange = (event: number | number[]) => {
         if (Array.isArray(event)) {
-            onChange(event[0]);
+            onChange(event[ 0 ]);
         }
     };
 
@@ -25,7 +25,7 @@ export const SliderComponent = ({ label, value, min, max, step, onChange, curren
             </label>
             <Slider
                 className='py-2'
-                defaultValue={[value]}
+                defaultValue={[ value ]}
                 aria-label={label}
                 maxValue={max}
                 minValue={min}

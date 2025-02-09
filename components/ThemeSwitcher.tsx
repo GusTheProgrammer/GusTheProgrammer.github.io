@@ -1,26 +1,30 @@
 "use client";
 
-import {FC} from "react";
-import {motion} from "framer-motion";
-import {VisuallyHidden} from "@react-aria/visually-hidden";
-import {SwitchProps, useSwitch} from "@heroui/switch";
-import {useTheme} from "next-themes";
-import {useIsSSR} from "@react-aria/ssr";
+import { FC } from "react";
+import { motion } from "framer-motion";
+import { VisuallyHidden } from "@react-aria/visually-hidden";
+import { SwitchProps, useSwitch } from "@heroui/switch";
+import { useTheme } from "next-themes";
+import { useIsSSR } from "@react-aria/ssr";
 import clsx from "clsx";
 
-import {Sun, Moon} from "lucide-react";
+import { Sun, Moon } from "lucide-react";
 
 export interface ThemeSwitchProps {
     className?: string;
     classNames?: SwitchProps["classNames"];
 }
 
-export const ThemeSwitcher: FC<ThemeSwitchProps> = ({className, classNames}) => {
-    const {theme, setTheme} = useTheme();
+export const ThemeSwitcher: FC<ThemeSwitchProps> = ({ className, classNames }) => {
+    const { theme, setTheme } = useTheme();
     const isSSR = useIsSSR();
 
     const onChange = () => {
-        theme === "light" ? setTheme("dark") : setTheme("light");
+        if (theme === "light") {
+            setTheme("dark");
+        } else {
+            setTheme("light");
+        }
     };
 
     const {
@@ -68,9 +72,9 @@ export const ThemeSwitcher: FC<ThemeSwitchProps> = ({className, classNames}) => 
                     ),
                 })}
             >
-                <motion.div whileTap={{rotate: 360}}>
+                <motion.div whileTap={{ rotate: 360 }}>
                     {!isSelected || isSSR ? (
-                        <Sun size={22} className="text-yellow-300"/>
+                        <Sun size={22} className="hover:text-yellow-300"/>
                     ) : (
                         <Moon size={22} className="text-slate-600"/>
                     )}

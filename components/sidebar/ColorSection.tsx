@@ -1,9 +1,9 @@
 'use client';
 
-import {SidebarSection} from "@/components/sidebar/SidebarSection";
+import { SidebarSection } from "@/components/sidebar/SidebarSection";
 import ColorPicker from "@/components/sidebar/ColorPicker";
-import {Palette} from "lucide-react";
-import {useThemeSettingsStore} from "@/stores/useThemeSettingsStore";
+import { Palette } from "lucide-react";
+import { useThemeSettingsStore } from "@/stores/useThemeSettingsStore";
 
 export default function ColorSection() {
     const {

@@ -1,32 +1,33 @@
 import "@/styles/globals.css";
-import {Metadata, Viewport} from "next";
-import {Fira_Code as FontMono, Inter as FontSans} from "next/font/google";
-import {Providers} from "@/app/provider";
+import { Metadata, Viewport } from "next";
+import { Inter as FontSans } from "next/font/google";
+import { Providers } from "@/app/provider";
 import clsx from "clsx";
-import {NavbarWrapper} from "@/components/Navbar";
+import { NavbarWrapper } from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { parseResume } from "@/lib/parseResume";
 
 const fontSans = FontSans({
-    subsets: ["latin"],
+    subsets: [ "latin" ],
     variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
-    title: "Sussy Gussy",
-    description: "idk portfolio or sumshit",
+    title: "Gus Shaal",
+    description: "Personal website",
 };
 
 export const viewport: Viewport = {
     themeColor: [
-        {media: "(prefers-color-scheme: light)", color: "white"},
-        {media: "(prefers-color-scheme: dark)", color: "black"},
+        { media: "(prefers-color-scheme: light)", color: "white" },
+        { media: "(prefers-color-scheme: dark)", color: "black" },
     ],
 };
 
-export default function RootLayout({children}: {
+export default function RootLayout({ children }: {
     children: React.ReactNode;
 }) {
-
+    const resumeData = parseResume()
     return (
         <html suppressHydrationWarning lang="en">
             <body
@@ -35,7 +36,7 @@ export default function RootLayout({children}: {
                     fontSans.variable,
                 )}
             >
-                <Providers themeProps={{attribute: "class", defaultTheme: "dark"}}>
+                <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }} resumeData={resumeData}>
                     <NavbarWrapper />
                     {children}
                     <Footer  />

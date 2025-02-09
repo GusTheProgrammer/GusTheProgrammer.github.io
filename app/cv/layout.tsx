@@ -1,4 +1,4 @@
-import {Metadata} from "next";
+import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
@@ -19,6 +19,6 @@ export const metadata: Metadata = {
     },
 };
 
-export default function EditorLayout({children}: { children: React.ReactNode }) {
+export default function EditorLayout({ children }: { children: React.ReactNode }) {
     return <>{children}</>;
 }

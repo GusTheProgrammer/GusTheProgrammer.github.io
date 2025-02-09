@@ -1,8 +1,8 @@
 "use client";
 
-import {ResumeData} from "@/types/resume";
+import { ResumeData } from "@/types/resume";
 
-export function WorkExperience({experiences}: { experiences: ResumeData["workExperience"]; }) {
+export function WorkExperience({ experiences }: { experiences: ResumeData["workExperience"]; }) {
     return (
         <section className="mb-4">
             <h2 className="font-semibold text-base mb-0">Work Experience</h2>

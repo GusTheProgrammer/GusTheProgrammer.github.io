@@ -1,8 +1,8 @@
 "use client";
 
-import {ResumeData} from "@/types/resume";
+import { ResumeData } from "@/types/resume";
 
-export function Education({data}: { data: ResumeData["education"] }) {
+export function Education({ data }: { data: ResumeData["education"] }) {
     return (
         <section className="mb-4">
             <h2 className="font-semibold text-base mb-0">Education</h2>

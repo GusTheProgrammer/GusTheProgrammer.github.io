@@ -3,13 +3,13 @@ import { SidebarSection } from "@/components/sidebar/SidebarSection";
 import { Palette } from "lucide-react";
 import { ThemeList } from "@/lib/constants";
 import { Autocomplete, AutocompleteItem } from "@heroui/react";
-import {useThemeSettingsStore} from "@/stores/useThemeSettingsStore";
+import { useThemeSettingsStore } from "@/stores/useThemeSettingsStore";
 
 
 
 export function ThemeSection() {
     const { theme, applyTheme } = useThemeSettingsStore();
-    const themeOptions = Object.entries(ThemeList).map(([key, value]) => ({
+    const themeOptions = Object.entries(ThemeList).map(([ key, value ]) => ({
         key: key,
         label: value,
     }));
@@ -17,40 +17,40 @@ export function ThemeSection() {
     // Get initial key safely
     const getInitialKey = () => {
         const entry = Object.entries(ThemeList).find(
-            ([_, value]) => value === theme
+            ([ , value ]) => value === theme
         );
-        return entry?.[0] || 'tehran';
+        return entry?.[ 0 ] || 'tehran';
     };
 
-    const [selectedKey, setSelectedKey] = useState<string>(getInitialKey());
+    const [ selectedKey, setSelectedKey ] = useState<string>(getInitialKey());
 
     useEffect(() => {
         const newKey = Object.entries(ThemeList).find(
-            ([_, value]) => value === theme
-        )?.[0];
+            ([ , value ]) => value === theme
+        )?.[ 0 ];
         if (newKey) setSelectedKey(newKey);
-    }, [theme]);
+    }, [ theme ]);
 
     const handleSelectionChange = (key: string | number | null) => {
         // Handle null case (when input is cleared)
         if (key === null) {
             const defaultKey = 'tehran';
             setSelectedKey(defaultKey);
-            applyTheme(ThemeList[defaultKey as keyof typeof ThemeList]);
+            applyTheme(ThemeList[ defaultKey as keyof typeof ThemeList ]);
             return;
         }
 
         const themeKey = key as keyof typeof ThemeList;
 
         // Additional safety check
-        if (ThemeList[themeKey]) {
+        if (ThemeList[ themeKey ]) {
             setSelectedKey(themeKey);
-            applyTheme(ThemeList[themeKey]);
+            applyTheme(ThemeList[ themeKey ]);
         } else {
             // Fallback to default if invalid key
             const defaultKey = 'tehran';
             setSelectedKey(defaultKey);
-            applyTheme(ThemeList[defaultKey as keyof typeof ThemeList]);
+            applyTheme(ThemeList[ defaultKey as keyof typeof ThemeList ]);
         }
     };
 

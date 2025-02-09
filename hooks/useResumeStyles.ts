@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
-import {useThemeSettingsStore} from '@/stores/useThemeSettingsStore';
-import {loadFont} from "@/lib/fontUtils";
-import {fonts} from "@/lib/constants";
+import React, { useEffect } from 'react';
+import { useThemeSettingsStore } from '@/stores/useThemeSettingsStore';
+import { loadFont } from "@/lib/fontUtils";
+import { fonts } from "@/lib/constants";
 
 export const useResumeStyles = (containerRef: React.RefObject<HTMLElement>) => {
     const {
@@ -19,8 +19,8 @@ export const useResumeStyles = (containerRef: React.RefObject<HTMLElement>) => {
     } = useThemeSettingsStore();
 
     useEffect(() => {
-        if (font && fonts[font]) loadFont(fonts[font]);
-    }, [font]);
+        if (font && fonts[ font ]) loadFont(fonts[ font ]);
+    }, [ font ]);
 
     // Update CSS variables in the container
     useEffect(() => {
@@ -38,6 +38,6 @@ export const useResumeStyles = (containerRef: React.RefObject<HTMLElement>) => {
         container.style.setProperty('--linkColor', linkColor);
         container.style.setProperty('--bulletColor', bulletColor);
         container.style.setProperty('--hrColor', hrColor);
-    }, [containerRef, font, fontScale, headingScale, lineHeightScale,
-        xPaddingScale, yPaddingScale, headerColor, textColor, linkColor, bulletColor, hrColor]);
+    }, [ containerRef, font, fontScale, headingScale, lineHeightScale,
+        xPaddingScale, yPaddingScale, headerColor, textColor, linkColor, bulletColor, hrColor ]);
 };

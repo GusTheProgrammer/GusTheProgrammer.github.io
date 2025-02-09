@@ -1,8 +1,8 @@
 "use client";
 
-import {create} from "zustand";
-import {persist} from "zustand/middleware";
-import {themes} from "@/lib/constants";
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import { themes } from "@/lib/constants";
 
 interface ThemeSettingsState {
     theme: string;
@@ -50,41 +50,41 @@ export const useThemeSettingsStore = create<ThemeSettingsState>()(
             theme: "tehran",
 
             font: "Open Sans",
-            setFont: (value) => set({font: value}),
+            setFont: (value) => set({ font: value }),
 
             headingScale: 1,
-            setHeadingScale: (value) => set({headingScale: value}),
+            setHeadingScale: (value) => set({ headingScale: value }),
 
             fontScale: 1,
-            setFontScale: (value) => set({fontScale: value}),
+            setFontScale: (value) => set({ fontScale: value }),
 
             lineHeightScale: 1.5,
-            setLineHeightScale: (value) => set({lineHeightScale: value}),
+            setLineHeightScale: (value) => set({ lineHeightScale: value }),
 
             xPaddingScale: 20,
-            setXPaddingScale: (value) => set({xPaddingScale: value}),
+            setXPaddingScale: (value) => set({ xPaddingScale: value }),
 
             yPaddingScale: 20,
-            setYPaddingScale: (value) => set({yPaddingScale: value}),
+            setYPaddingScale: (value) => set({ yPaddingScale: value }),
 
             headerColor: "#000",
-            setHeaderColor: (value) => set({headerColor: value}),
+            setHeaderColor: (value) => set({ headerColor: value }),
 
             textColor: "#000",
-            setTextColor: (value) => set({textColor: value}),
+            setTextColor: (value) => set({ textColor: value }),
 
             linkColor: "#1a73e8",
-            setLinkColor: (value) => set({linkColor: value}),
+            setLinkColor: (value) => set({ linkColor: value }),
 
             bulletColor: "#016ef1",
-            setBulletColor: (value) => set({bulletColor: value}),
+            setBulletColor: (value) => set({ bulletColor: value }),
 
             hrColor: "#000",
-            setHrColor: (value) => set({hrColor: value}),
+            setHrColor: (value) => set({ hrColor: value }),
 
             applyTheme: (themeName) => {
                 const normalizedName = themeName.toLowerCase();
-                const selectedTheme = themes[normalizedName] || themes["tehran"];
+                const selectedTheme = themes[ normalizedName ] || themes[ "tehran" ];
 
                 set({
                     theme: normalizedName,

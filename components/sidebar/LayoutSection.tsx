@@ -1,9 +1,9 @@
 'use client';
 
-import {SidebarSection} from "@/components/sidebar/SidebarSection";
-import {SliderComponent} from "@/components/sidebar/SliderComponent";
-import {Layout} from "lucide-react";
-import {useThemeSettingsStore} from "@/stores/useThemeSettingsStore";
+import { SidebarSection } from "@/components/sidebar/SidebarSection";
+import { SliderComponent } from "@/components/sidebar/SliderComponent";
+import { Layout } from "lucide-react";
+import { useThemeSettingsStore } from "@/stores/useThemeSettingsStore";
 
 
 export function LayoutSection() {

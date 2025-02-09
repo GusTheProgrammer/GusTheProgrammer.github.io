@@ -1,25 +1,25 @@
 'use client';
 
-import {ThemeSection} from "@/components/sidebar/ThemeSection";
-import {FontSection} from "@/components/sidebar/FontSection";
-import {LayoutSection} from "@/components/sidebar/LayoutSection";
-import {SidebarButtons} from "@/components/sidebar/SidebarButtons";
+import { ThemeSection } from "@/components/sidebar/ThemeSection";
+import { FontSection } from "@/components/sidebar/FontSection";
+import { LayoutSection } from "@/components/sidebar/LayoutSection";
+import { SidebarButtons } from "@/components/sidebar/SidebarButtons";
 import ColorSection from "@/components/sidebar/ColorSection";
-import {Button, Drawer, DrawerBody, DrawerContent, DrawerFooter, DrawerHeader, useDisclosure} from "@heroui/react";
-import {useEffect, useRef} from "react";
+import { Button, Drawer, DrawerBody, DrawerContent, DrawerFooter, DrawerHeader, useDisclosure } from "@heroui/react";
+import { useEffect, useRef } from "react";
 
 interface SidebarProps {
     handlePrint: () => void;
     onIsOpenChange: (isOpen: boolean) => void;
 }
 
-const Sidebar = ({handlePrint, onIsOpenChange}: SidebarProps) => {
-    const {isOpen, onOpen, onClose, onOpenChange} = useDisclosure();
+const Sidebar = ({ handlePrint, onIsOpenChange }: SidebarProps) => {
+    const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
     const drawerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         onIsOpenChange(isOpen);
-    }, [isOpen, onIsOpenChange]);
+    }, [ isOpen, onIsOpenChange ]);
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
@@ -37,7 +37,7 @@ const Sidebar = ({handlePrint, onIsOpenChange}: SidebarProps) => {
 
         window.addEventListener("mousemove", handleMouseMove);
         return () => window.removeEventListener("mousemove", handleMouseMove);
-    }, [isOpen, onOpen, onClose]);
+    }, [ isOpen, onOpen, onClose ]);
 
 
     return (
@@ -51,12 +51,12 @@ const Sidebar = ({handlePrint, onIsOpenChange}: SidebarProps) => {
                             enter: {
                                 opacity: 1,
                                 x: 0,
-                                transition: {duration: 0.3},
+                                transition: { duration: 0.3 },
                             },
                             exit: {
                                 x: 100,
                                 opacity: 0,
-                                transition: {duration: 0.3},
+                                transition: { duration: 0.3 },
                             },
                         },
                     }}>
